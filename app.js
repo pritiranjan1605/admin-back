@@ -14,8 +14,7 @@ app.use(express.json());
 
 app.use(cors({
   origin: [
-    'https://admin-back-4nqh.onrender.com',
-    'https://your-vercel-domain.vercel.app',
+    'https://eleqt-admin-frn.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000'
   ],
