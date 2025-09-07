@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 import adminRoutes from "./routes/admin.js";
 import bookingRoutes from "./routes/booking.js";
 import eventRoutes from "./routes/event.js";
@@ -10,6 +11,16 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+  origin: [
+    'https://admin-back-4nqh.onrender.com',
+    'https://your-vercel-domain.vercel.app',
+    'http://localhost:5173',
+    'http://localhost:3000'
+  ],
+  credentials: true
+}));
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
